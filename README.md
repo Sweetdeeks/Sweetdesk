@@ -1,73 +1,334 @@
-# Sweetdesk
-Quiero que generes un archivo HTML completo, funcional y profesional, que represente una landing page comercial para el proyecto real "SweetDesk", creado por Fermín M.
-
-La estructura debe seguir las buenas prácticas de accesibilidad, diseño responsive y estética moderna.
-
-⚙️ ESTILO VISUAL:
-- Fondo oscuro (#0d0d0d), con acentos coral (#fb7185) y violeta (#8b5cf6)
-- Tipografía principal: Montserrat (Google Fonts)
-- Animaciones suaves en botones y secciones
-- Diseño limpio y profesional, similar a sitios como Linear, Vercel o SuiteAI
-- Código HTML limpio, sin librerías externas (solo CSS nativo y Google Fonts)
-
-🎯 CONTENIDO QUE DEBE INCLUIR:
-
-🔹 SECCIÓN 1 – HERO PRINCIPAL
-- Logo grande con nombre “SweetDesk”
-- Subtítulo: “Automatización inteligente para negocios reales”
-- Botón CTA: “Quiero mi SweetDesk”
-- Imagen o simulación de un widget de atención al lado (estático o simulado)
-- Animación leve de aparición o fade
-
-🔹 SECCIÓN 2 – ¿QUÉ ES SWEETDESK?
-- Explicación breve: “Es una suite de soluciones automatizadas que simulan atención humana, ventas personalizadas y pedidos, las 24hs. Sin apps raras, sin complicaciones.”
-- Creador: Fermín M. – Año: 2024–2025
-
-🔹 SECCIÓN 3 – SERVICIOS MODULARES (mostrar 4 tarjetas)
-- 🟪 Atención Inteligente → Automatiza consultas, reservas y derivación
-- 🔵 Ventas Inteligentes → Automatiza secuencia de ventas, objeciones y cobros
-- 🔴 Delivery IA → Automatiza pedidos físicos desde IG o WhatsApp
-- 🧠 Plan Total IA → Combina todo en un solo entorno con seguimiento
-
-🔹 SECCIÓN 4 – COMPARADOR DE PLANES (con tabla responsive)
-Debe tener 4 columnas principales (Starter / Pro / Premium / Total IA) y filas como:
-- Automatización 24/7 ✅
-- Captura de datos ✅
-- Derivación a WhatsApp o pago ✅
-- Dashboard visual ✅
-- Soporte técnico ✅
-Agregar precios reales en ARS y USD:
-- Atención desde $89.000 ARS o $97 USD
-- Ventas desde $97.000 ARS o $127 USD
-- Delivery desde $89.000 ARS o $97 USD
-- Total IA: $239.000 ARS o $497 USD
-
-🔹 SECCIÓN 5 – DEMO INTERACTIVA
-- Botón flotante (simulado) abajo a la derecha con texto: “Hola 👋 ¿En qué puedo ayudarte hoy?”
-- Al hacer clic, que muestre un alert con ejemplo de conversación
-
-🔹 SECCIÓN 6 – POR QUÉ ELEGIR SWEETDESK
-- Lista con íconos:
-  ✅ Sin apps raras ni plataformas extra
-  ✅ Atención 24/7 real
-  ✅ Se instala en 2 días
-  ✅ Totalmente personalizable
-  ✅ Ideal para negocios físicos o digitales
-
-🔹 SECCIÓN 7 – CTA FINAL
-- Título: ¿Querés que tu negocio atienda solo?
-- Botón: “Solicitá tu activación”
-- Subtítulo: "Entrega en 72 horas · Soporte incluido · Marca profesional"
-
-🔹 FOOTER
-- Firma: “Creado por Fermín M. · Ejecutado con SuiteAI (J&A)”
-- Copyright: SweetDesk® 2024–2025
-- Estilo sobrio
-
-🧩 EXTRAS (si el modelo lo permite):
-- Incluir el logo como SVG o simulación
-- Fondo con leves gradientes radiales
-- Efecto hover en los planes
-- Código optimizado para subir directo a GitHub Pages o WordPress HTML block
-
-🧠 Esta página no es una demo escolar ni una maqueta. Es una pieza real para un negocio en funcionamiento. El código debe estar listo para uso inmediato y permitir ediciones simples si se quiere cambiar texto, precio o botón.
+# <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SweetDesk - Automatización inteligente para negocios reales">
+    <title>SweetDesk - Automatización Inteligente</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #0d0d0d;
+            color: #ffffff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .fade-in {
+            animation: fadeIn 1s ease-out forwards;
+        }
+        header {
+            background: radial-gradient(circle at top, rgba(139, 92, 246, 0.1), transparent 70%);
+            padding: 80px 0;
+            text-align: center;
+        }
+        .logo {
+            max-width: 200px;
+            margin-bottom: 20px;
+        }
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        .subtitle {
+            font-size: 1.5rem;
+            color: #d1d5db;
+            margin-bottom: 30px;
+        }
+        .cta-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #fb7185;
+            color: #0d0d0d;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+        .cta-button:hover {
+            transform: translateY(-3px);
+            background-color: #f43f5e;
+        }
+        .hero-image {
+            max-width: 300px;
+            margin: 20px auto;
+            background: #1f1f1f;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        }
+        section {
+            padding: 80px 0;
+        }
+        .about {
+            text-align: center;
+        }
+        .services {
+            background: radial-gradient(circle at bottom, rgba(251, 113, 133, 0.1), transparent 70%);
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+        .service-card {
+            background: #1f1f1f;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+        .service-card h3 {
+            color: #8b5cf6;
+            margin-bottom: 15px;
+        }
+        .plans-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 40px;
+            background: #1f1f1f;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        .plans-table th, .plans-table td {
+            padding: 15px;
+            text-align: center;
+            border-bottom: 1px solid #2d2d2d;
+        }
+        .plans-table th {
+            background: #8b5cf6;
+            color: #0d0d0d;
+            font-weight: 700;
+        }
+        .plans-table td {
+            color: #d1d5db;
+        }
+        .plans-table tr:hover {
+            background: #2d2d2d;
+        }
+        .demo {
+            position: relative;
+        }
+        .demo-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #fb7185;
+            color: #0d0d0d;
+            padding: 15px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+        .demo-button:hover {
+            transform: scale(1.05);
+        }
+        .why-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+        .why-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .why-item span {
+            color: #fb7185;
+            font-size: 1.5rem;
+        }
+        footer {
+            background: #1f1f1f;
+            padding: 40px 0;
+            text-align: center;
+            color: #d1d5db;
+        }
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            h2 { font-size: 2rem; }
+            .subtitle { font-size: 1.2rem; }
+            .plans-table { font-size: 0.9rem; }
+            .plans-table th, .plans-table td { padding: 10px; }
+        }
+        @media (max-width: 480px) {
+            .plans-table { display: block; }
+            .plans-table thead { display: none; }
+            .plans-table tr { display: block; margin-bottom: 20px; }
+            .plans-table td { display: block; text-align: left; }
+            .plans-table td:before {
+                content: attr(data-label);
+                font-weight: 700;
+                display: block;
+                color: #8b5cf6;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="fade-in">
+        <div class="container">
+            <svg class="logo" viewBox="0 0 200 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <text x="10" y="35" font-family="Montserrat, sans-serif" font-size="30" font-weight="700" fill="#fb7185">SweetDesk</text>
+            </svg>
+            <h1>Automatización inteligente para negocios reales</h1>
+            <p class="subtitle">Simplifica tu atención, ventas y pedidos con IA que trabaja 24/7</p>
+            <a href="#contact" class="cta-button">Quiero mi SweetDesk</a>
+            <div class="hero-image">
+                <img src="https://via.placeholder.com/300x200?text=Widget+Demo" alt="Simulación de widget SweetDesk">
+            </div>
+        </div>
+    </header>
+    <section class="about fade-in">
+        <div class="container">
+            <h2>¿Qué es SweetDesk?</h2>
+            <p>Es una suite de soluciones automatizadas que simulan atención humana, ventas personalizadas y pedidos, las 24hs. Sin apps raras, sin complicaciones.</p>
+            <p><strong>Creador:</strong> Fermín M. · <strong>Año:</strong> 2024–2025</p>
+        </div>
+    </section>
+    <section class="services fade-in">
+        <div class="container">
+            <h2>Servicios Modulares</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>🟪 Atención Inteligente</h3>
+                    <p>Automatiza consultas, reservas y derivación</p>
+                </div>
+                <div class="service-card">
+                    <h3>🔵 Ventas Inteligentes</h3>
+                    <p>Automatiza secuencia de ventas, objeciones y cobros</p>
+                </div>
+                <div class="service-card">
+                    <h3>🔴 Delivery IA</h3>
+                    <p>Automatiza pedidos físicos desde IG o WhatsApp</p>
+                </div>
+                <div class="service-card">
+                    <h3>🧠 Plan Total IA</h3>
+                    <p>Combina todo en un solo entorno con seguimiento</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="plans fade-in">
+        <div class="container">
+            <h2>Comparador de Planes</h2>
+            <table class="plans-table">
+                <thead>
+                    <tr>
+                        <th>Características</th>
+                        <th>Starter</th>
+                        <th>Pro</th>
+                        <th>Premium</th>
+                        <th>Total IA</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-label="Características">Automatización 24/7</td>
+                        <td data-label="Starter">✅</td>
+                        <td data-label="Pro">✅</td>
+                        <td data-label="Premium">✅</td>
+                        <td data-label="Total IA">✅</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Características">Captura de datos</td>
+                        <td data-label="Starter">✅</td>
+                        <td data-label="Pro">✅</td>
+                        <td data-label="Premium">✅</td>
+                        <td data-label="Total IA">✅</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Características">Derivación a WhatsApp o pago</td>
+                        <td data-label="Starter">✅</td>
+                        <td data-label="Pro">✅</td>
+                        <td data-label="Premium">✅</td>
+                        <td data-label="Total IA">✅</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Características">Dashboard visual</td>
+                        <td data-label="Starter">✅</td>
+                        <td data-label="Pro">✅</td>
+                        <td data-label="Premium">✅</td>
+                        <td data-label="Total IA">✅</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Características">Soporte técnico</td>
+                        <td data-label="Starter">✅</td>
+                        <td data-label="Pro">✅</td>
+                        <td data-label="Premium">✅</td>
+                        <td data-label="Total IA">✅</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Características">Precio</td>
+                        <td data-label="Starter">$89.000 ARS / $97 USD</td>
+                        <td data-label="Pro">$97.000 ARS / $127 USD</td>
+                        <td data-label="Premium">$89.000 ARS / $97 USD</td>
+                        <td data-label="Total IA">$239.000 ARS / $497 USD</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <section class="demo fade-in">
+        <div class="container">
+            <h2>Demo Interactiva</h2>
+            <p>Probá cómo SweetDesk puede atender a tus clientes:</p>
+            <a href="#" class="demo-button" onclick="alert('¡Hola! 👋 Bienvenido a SweetDesk. ¿En qué puedo ayudarte hoy? Ejemplo: ¿Querés reservar una mesa o saber más sobre nuestros planes?')">Hola 👋 ¿En qué puedo ayudarte hoy?</a>
+        </div>
+    </section>
+    <section class="why fade-in">
+        <div class="container">
+            <h2>Por qué elegir SweetDesk</h2>
+            <div class="why-list">
+                <div class="why-item"><span>✅</span> Sin apps raras ni plataformas extra</div>
+                <div class="why-item"><span>✅</span> Atención 24/7 real</div>
+                <div class="why-item"><span>✅</span> Se instala en 2 días</div>
+                <div class="why-item"><span>✅</span> Totalmente personalizable</div>
+                <div class="why-item"><span>✅</span> Ideal para negocios físicos o digitales</div>
+            </div>
+        </div>
+    </section>
+    <section class="cta-final fade-in">
+        <div class="container">
+            <h2>¿Querés que tu negocio atienda solo?</h2>
+            <a href="#contact" class="cta-button">Solicitá tu activación</a>
+            <p class="subtitle">Entrega en 72 horas · Soporte incluido · Marca profesional</p>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <p>Creado por Fermín M. · Ejecutado con SuiteAI (J&A)</p>
+            <p>SweetDesk® 2024–2025</p>
+        </div>
+    </footer>
+</body>
+</html>
